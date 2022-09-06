@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble event</title>
+</head>
+<body>
+    
+    <div id="container">
+        <h2>Bubble event</h2>
+        <ul id="ul-container">
+            <li>Lorem, ipsum.</li>
+            <li>Temporibus, consectetur.</li>
+            <li id="item">Tempora, expedita!</li>
+            <li>Corrupti, aliquam.</li>
+            <li>Voluptatibus, repudiandae!</li>
+            <li>Eos, incidunt?</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('container clicked');
+        })
+        document.getElementById('ul-container').addEventListener('click', function(){
+            console.log('ul item clicked');
+        })
+        
+        document.getElementById('item').addEventListener('click', function(event){
+            console.log('lil item clicked');
+            event.stopPropagation();
+        })
+        document.getElementById('item').addEventListener('click', function(event){
+            console.log('lil item clicked');
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item').addEventListener('click', function(){
+            console.log('lil item clicked');
+        })
+        document.getElementById('item').addEventListener('click', function(){
+            console.log('lil item clicked');
+        })
+        
+    </script>
+</body>
+</html>

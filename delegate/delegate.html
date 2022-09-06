@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate</title>
+</head>
+<body>
+    <h2>Delegate</h2>
+    <ul id="item-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Iure, corrupti.</li>
+        <li class="item">Vel, porro.</li>
+        <li class="item">Id, officiis.</li>
+        <li class="item">Corrupti, harum.</li>
+        <li class="item">Eos, sequi.</li>
+    </ul>
+    <button id="btn">Add new</button>
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     console.log('item');
+        //     item.addEventListener('click', function(event){
+        //         // document.getElementById('item-container').removeChild(item);
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        
+        // }
+        document.getElementById('btn').addEventListener('click', function(){
+            const li = document.createElement('li');
+            li.innerText = 'new lorem ipsum';
+            li.classList.add('item');
+            document.getElementById('item-container').appendChild(li);
+        })
+
+        document.getElementById('item-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+    </script>
+</body>
+</html>
